@@ -1,229 +1,1081 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projetos - Vanessa Viana</title>
-    <meta
-      name="description"
-      content="Portfólio de Vanessa Viana, Analista de Dados especializada em Power BI, SQL, Python, visualização de dados, indicadores e análise territorial."
-    />
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap");
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
+/* ====== RESET BÁSICO ====== */
+html,
+body {
+  background: #000;
+  width: 100%;
+  overflow-x: hidden;
+}
 
-  <body>
-    <main class="page">
-      <!-- MENU TOPO -->
-      <nav class="page-nav">
-        <a href="index.html" class="nav-home">← Home</a>
-        <span class="nav-separator">|</span>
-        <a href="curriculo.html">Currículo</a>
-        <span class="nav-separator">|</span>
-        <a href="contato.html">Contato</a>
-      </nav>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "JetBrains Mono", monospace;
+}
 
-      <header class="page-header">
-        <h1>Projetos</h1>
-        <p class="page-subtitle">
-          Dashboards e análises desenvolvidos para apoio à tomada de decisão,
-          acompanhamento de KPIs e performance.
-        </p>
-      </header>
+/* ====== HERO / INTRO ====== */
+.hero {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center; /* Centraliza tudo horizontalmente */
+  padding: 40px 80px;
+  background-color: #000;
+  color: #fff;
+  height: 100vh;
+  gap: 60px; /* DISTÂNCIA ENTRE FOTO E TEXTO */
+}
 
-      <!-- LISTA EM FAIXAS -->
-      <section class="projects-list">
-        <!-- 1 -->
-        <article class="project-row">
-          <div class="project-text">
-            <h2>Dashboard Logística</h2>
-            <p>
-              Painel executivo com indicadores de OTD, custos de transporte,
-              volume de viagens e análise territorial da malha logística.
-            </p>
+/* Coluna da esquerda (texto) */
+.hero-content {
+  max-width: 50%;
+}
 
-            <div class="project-tags">
-              <span class="tag">Power BI</span>
-              <span class="tag">Logística</span>
-              <span class="tag">KPI</span>
-              <span class="tag">Mapa</span>
-            </div>
-          </div>
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
 
-          <a
-            class="project-image"
-            href="dash-logistica.png"
-            target="_blank"
-            rel="noopener"
-          >
-            <img
-              src="dash-logistica.png"
-              alt="Dashboard Logística"
-              loading="lazy"
-            />
-          </a>
-        </article>
+.hero-subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.75); /* Contraste mais suave */
+}
 
-        <!-- 2 (invertido) -->
-        <article class="project-row reverse">
-          <div class="project-text">
-            <h2>Indicadores DEMCA</h2>
-            <p>
-              Monitoramento de conflitos agrários com indicadores de
-              reintegração de posse, decisões judiciais e distribuição
-              territorial.
-            </p>
+/* Botões */
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
 
-            <div class="project-tags">
-              <span class="tag">Power BI</span>
-              <span class="tag">Políticas Públicas</span>
-              <span class="tag">Dados Territoriais</span>
-            </div>
-          </div>
+.btn {
+  background-color: #33cccc; /* verde */
+  padding: 14px 28px;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
 
-          <a
-            class="project-image"
-            href="dash-demca-conflitos.png"
-            target="_blank"
-            rel="noopener"
-          >
-            <img
-              src="dash-demca-conflitos.png"
-              alt="Indicadores DEMCA"
-              loading="lazy"
-            />
-          </a>
-        </article>
+.btn:hover {
+  filter: brightness(1.15);
+}
 
-        <!-- 3 -->
-        <article class="project-row">
-          <div class="project-text">
-            <h2>Mapa de Conflitos Agrários</h2>
-            <p>
-              Visualização geográfica dos conflitos agrários por estado,
-              natureza do conflito e grupos envolvidos.
-            </p>
+/* Botão alternativo */
+.btn-secondary {
+  background-color: #ffffff;
+}
 
-            <div class="project-tags">
-              <span class="tag">Power BI</span>
-              <span class="tag">Mapa</span>
-            </div>
-          </div>
+.btn-outline {
+  border: 2px solid #33cccc;
+  color: #33cccc;
+  background: transparent;
+}
 
-          <a
-            class="project-image"
-            href="dash-demca.png"
-            target="_blank"
-            rel="noopener"
-          >
-            <img
-              src="dash-demca.png"
-              alt="Mapa de Conflitos Agrários"
-              loading="lazy"
-            />
-          </a>
-        </article>
+.btn-outline:hover {
+  background-color: #33cccc;
+  color: #000;
+}
 
-        <!-- 4 (invertido) -->
-        <article class="project-row reverse">
-          <div class="project-text">
-            <h2>Performance Geral</h2>
-            <p>
-              Painel consolidado de performance operacional, faturamento,
-              entregas, desvios e indicadores estratégicos.
-            </p>
+/* ====== IMAGEM ====== */
+.hero-image img {
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+}
 
-            <div class="project-tags">
-              <span class="tag">Power BI</span>
-              <span class="tag">KPI</span>
-              <span class="tag">Gestão</span>
-            </div>
-          </div>
+/* =========================
+   PÁGINA CURRÍCULO (CV)
+   ========================= */
 
-          <a
-            class="project-image"
-            href="dash-performance-geral.png"
-            target="_blank"
-            rel="noopener"
-          >
-            <img
-              src="dash-performance-geral.png"
-              alt="Performance Geral"
-              loading="lazy"
-            />
-          </a>
-        </article>
+.page {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  padding: 60px 80px;
+}
 
-        <!-- 5 -->
-        <article class="project-row">
-          <div class="project-text">
-            <h2>Modais de Transporte</h2>
-            <p>
-              Análise comparativa de modais, tipos de entrega, custos e
-              performance operacional.
-            </p>
+/* Header da página */
+.page-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
 
-            <div class="project-tags">
-              <span class="tag">Excel</span>
-              <span class="tag">Transporte</span>
-              <span class="tag">Performance</span>
-            </div>
-          </div>
+.page-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  max-width: 700px;
+  margin-bottom: 40px;
+}
 
-          <a
-            class="project-image"
-            href="dash-modais-transporte.png"
-            target="_blank"
-            rel="noopener"
-          >
-            <img
-              src="dash-modais-transporte.png"
-              alt="Modais de Transporte"
-              loading="lazy"
-            />
-          </a>
-        </article>
+/* Seções */
+.cv-section {
+  max-width: 900px;
+  margin-bottom: 38px;
+}
 
-        <!-- 6 (invertido) -->
-        <article class="project-row reverse">
-          <div class="project-text">
-            <h2>Dashboard Finanças Pessoais</h2>
-            <p>
-              Controle financeiro com análise de entradas, despesas, saldo,
-              investimentos e histórico mensal de gastos.
-            </p>
+/* Título das seções */
+.cv-section h2 {
+  font-size: 18px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #33cccc;
+  margin-bottom: 14px;
+}
 
-            <div class="project-tags">
-              <span class="tag">Excel</span>
-              <span class="tag">Financeiro</span>
-              <span class="tag">Indicadores</span>
-            </div>
-          </div>
+/* Texto geral */
+.cv-section p,
+.cv-section li {
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.7;
+  font-size: 16px;
+}
 
-          <a
-            class="project-image"
-            href="dash-financas-pessoais.png"
-            target="_blank"
-            rel="noopener"
-          >
-            <img
-              src="dash-financas-pessoais.png"
-              alt="Dashboard Finanças Pessoais"
-              loading="lazy"
-            />
-          </a>
-        </article>
-      </section>
+/* Itens de experiência/formação */
+.cv-item {
+  padding: 16px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
 
-      <!-- MENU RODAPÉ -->
-      <nav class="page-nav footer-nav">
-        <a href="index.html" class="nav-home">← Home</a>
-        <span class="nav-separator">|</span>
-        <a href="curriculo.html">Currículo</a>
-        <span class="nav-separator">|</span>
-        <a href="contato.html">Contato</a>
-      </nav>
-    </main>
-  </body>
-</html>
+.cv-item:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
 
+.cv-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Período */
+.cv-period {
+  display: inline-block;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 10px;
+}
+
+/* Listas */
+.cv-section ul {
+  margin-left: 18px;
+}
+
+.cv-section li {
+  margin-bottom: 8px;
+}
+
+/* Skills viram "tags" */
+.skills-list {
+  list-style: none;
+  margin-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+}
+
+.skills-list li {
+  border: 1px solid rgba(51, 204, 204, 0.55);
+  color: #33cccc;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 1;
+  background: rgba(51, 204, 204, 0.08);
+}
+
+/* Links */
+.cv-section a {
+  color: #33cccc;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(51, 204, 204, 0.5);
+  padding-bottom: 2px;
+}
+
+.cv-section a:hover {
+  border-bottom-style: solid;
+}
+
+/* Responsivo (mobile) */
+@media (max-width: 900px) {
+  .page {
+    padding: 40px 24px;
+  }
+
+  .page-header h1 {
+    font-size: 34px;
+  }
+
+  .cv-section {
+    max-width: 100%;
+  }
+}
+
+/* =========================
+   Navegação - Voltar Home
+   ========================= */
+
+.back-home {
+  margin-bottom: 32px;
+}
+
+.back-home a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.25s ease;
+}
+
+.back-home a:hover {
+  color: #33cccc;
+  transform: translateX(-4px);
+}
+
+/* Versão do botão no final da página */
+.back-home-footer {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =========================
+   PÁGINA CONTATO
+   ========================= */
+
+.contact-grid {
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.contact-card {
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 18px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  transition: 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-card h3 {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.contact-card p {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.contact-action {
+  margin-top: 6px;
+  color: #33cccc;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.contact-card:hover {
+  border-color: rgba(51, 204, 204, 0.55);
+  transform: translateY(-3px);
+  background: rgba(51, 204, 204, 0.06);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.page-nav {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.page-nav a {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.page-nav a:hover {
+  color: #33cccc;
+}
+
+.nav-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-separator {
+  color: rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+}
+
+.page-nav.footer-nav {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =========================
+   PROJETOS (Cards com imagem)
+   ========================= */
+
+.featured-project {
+  max-width: 1050px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 18px;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  margin-bottom: 22px;
+}
+
+.featured-badge {
+  display: inline-block;
+  font-size: 12px;
+  color: #33cccc;
+  border: 1px solid rgba(51, 204, 204, 0.4);
+  background: rgba(51, 204, 204, 0.08);
+  padding: 7px 10px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.featured-text h2 {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.featured-text p {
+  margin: 0 0 14px 0;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.75;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 14px 0;
+}
+
+.tag {
+  border: 1px solid rgba(51, 204, 204, 0.4);
+  color: #33cccc;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1;
+  background: rgba(51, 204, 204, 0.08);
+}
+
+.project-bullets,
+.project-mini {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.project-bullets li,
+.project-mini li {
+  margin-bottom: 7px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.7;
+}
+
+.project-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.project-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: 0.25s ease;
+  font-size: 14px;
+}
+
+.project-btn.primary {
+  background: #33cccc;
+  border-color: rgba(51, 204, 204, 0.7);
+  color: #061313;
+  font-weight: 700;
+}
+
+.project-btn.primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.project-btn.ghost {
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.project-btn.ghost:hover {
+  color: #33cccc;
+  border-color: rgba(51, 204, 204, 0.45);
+  transform: translateY(-2px);
+}
+
+.featured-media {
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.featured-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.01);
+  transition: 0.25s ease;
+}
+
+.featured-media:hover img {
+  transform: scale(1.04);
+}
+
+/* GRID DE PROJETOS */
+.projects-grid {
+  max-width: 1050px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.project-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  transition: 0.25s ease;
+}
+
+.project-card:hover {
+  border-color: rgba(51, 204, 204, 0.55);
+  background: rgba(51, 204, 204, 0.06);
+  transform: translateY(-3px);
+}
+
+.project-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  transition: 0.25s ease;
+}
+
+.project-card:hover .project-thumb img {
+  transform: scale(1.06);
+}
+
+.project-body {
+  padding: 16px;
+}
+
+.project-body h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.project-desc {
+  margin: 0 0 10px 0;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.75;
+}
+
+.project-mini {
+  margin-top: 6px;
+}
+
+@media (max-width: 980px) {
+  .featured-project {
+    grid-template-columns: 1fr;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   PROJETOS (layout texto + imagem)
+   ========================= */
+
+.projects-stack {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  gap: 26px;
+}
+
+/* bloco de projeto */
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 22px;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  align-items: center;
+}
+
+/* alternar lado no desktop */
+.project-row.reverse .project-info {
+  order: 2;
+}
+.project-row.reverse .project-media {
+  order: 1;
+}
+
+.project-title {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.project-desc {
+  margin: 0 0 12px 0;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+  max-width: 60ch; /* controla largura do texto e deixa mais bonito */
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 12px 0;
+}
+
+.tag {
+  border: 1px solid rgba(51, 204, 204, 0.4);
+  color: #33cccc;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1;
+  background: rgba(51, 204, 204, 0.08);
+}
+
+.project-points {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.project-points li {
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.7;
+}
+
+.project-hint {
+  margin: 12px 0 0 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* imagem SEM CORTE */
+.project-media {
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.18);
+  transition: 0.25s ease;
+}
+
+.project-media img {
+  width: 100%;
+  height: auto; /* deixa a imagem inteira aparecer */
+  display: block;
+  object-fit: contain; /* não corta */
+  background: rgba(0, 0, 0, 0.2);
+  transition: 0.25s ease;
+}
+
+.project-row:hover {
+  border-color: rgba(51, 204, 204, 0.55);
+  background: rgba(51, 204, 204, 0.06);
+  transform: translateY(-2px);
+  transition: 0.25s ease;
+}
+
+.project-row:hover .project-media {
+  border-color: rgba(51, 204, 204, 0.45);
+}
+
+.project-row:hover .project-media img {
+  transform: scale(1.02);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 980px) {
+  .project-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* em telas menores, tira a inversão pra manter padrão */
+  .project-row.reverse .project-info,
+  .project-row.reverse .project-media {
+    order: initial;
+  }
+
+  .project-desc {
+    max-width: 100%;
+  }
+}
+
+/* ===== PROJETOS ===== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.project-card {
+  background: #0f0f0f;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(51, 204, 204, 0.25);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-content {
+  padding: 20px;
+}
+
+.project-content h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.project-content p {
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.project-tags {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tags span {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(51, 204, 204, 0.15);
+  color: #33cccc;
+}
+
+/* ===== PROJETOS (LAYOUT MODELO ALTERNADO) ===== */
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+/* cada faixa */
+.project-row {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 36px;
+  align-items: center;
+
+  background: #0f0f0f;
+  border-radius: 18px;
+  padding: 26px;
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* alternar imagem/texto */
+.project-row.reverse .project-text {
+  order: 2;
+}
+.project-row.reverse .project-image {
+  order: 1;
+}
+
+.project-text h2 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+}
+
+.project-text p {
+  opacity: 0.85;
+  line-height: 1.7;
+  max-width: 62ch; /* deixa a leitura bonita */
+}
+
+.project-tags {
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tags .tag {
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(51, 204, 204, 0.14);
+  color: #33cccc;
+  border: 1px solid rgba(51, 204, 204, 0.25);
+}
+
+/* imagem sem cortar */
+.project-image {
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* hover “profissional” */
+.project-row:hover {
+  transform: translateY(-4px);
+  transition: 0.25s ease;
+  box-shadow: 0 14px 34px rgba(51, 204, 204, 0.12);
+}
+
+/* responsivo: tablet */
+@media (max-width: 980px) {
+  .project-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 20px;
+  }
+
+  /* no mobile não faz sentido alternar */
+  .project-row.reverse .project-text,
+  .project-row.reverse .project-image {
+    order: initial;
+  }
+
+  .project-text p {
+    max-width: 100%;
+  }
+}
+
+/* ================================
+   RESPONSIVO (celular / tablet)
+   Cole no FINAL do style.css
+================================ */
+
+/* Evita overflow horizontal (aquela rolagem pro lado no celular) */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Garante que imagens nunca ultrapassem o container */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Largura e respiro padrão das páginas */
+.page {
+  width: min(1100px, 100%);
+  padding-left: 24px;
+  padding-right: 24px;
+  margin: 0 auto;
+}
+
+/* Nav não quebrar feio no mobile */
+.page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ---------- TABLET ---------- */
+@media (max-width: 900px) {
+  .page {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  /* Projetos em faixas: deixa mais “apertado” no tablet */
+  .project-row {
+    gap: 18px;
+  }
+
+  /* Contato: 2 colunas no tablet, se estiver usando grid */
+  .contact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ---------- CELULAR ---------- */
+@media (max-width: 600px) {
+  .page {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  /* Títulos menores no celular */
+  .page-header h1 {
+    font-size: 40px; /* ajuste se quiser menor/maior */
+    line-height: 1.05;
+  }
+
+  .page-subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.9;
+  }
+
+  /* ===== HOME (hero) =====
+     Se sua home usa flex para alinhar foto + texto,
+     isso empilha e centraliza no mobile.
+  */
+  .hero,
+  .home-hero,
+  .container-hero,
+  .main-content {
+    /* caso algum desses exista no seu CSS */
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 22px !important;
+  }
+
+  /* Foto no mobile (se tiver classe específica, melhor) */
+  .hero-photo,
+  .profile-photo,
+  .avatar,
+  .foto,
+  .photo {
+    width: min(320px, 85vw);
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* Texto do hero no mobile */
+  .hero-text,
+  .intro,
+  .home-text {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  /* Botões do hero no mobile */
+  .hero-buttons,
+  .buttons,
+  .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* ===== PROJETOS (faixas) ===== */
+  .projects-list {
+    gap: 18px;
+  }
+
+  /* Cada faixa vira 1 coluna */
+  .project-row,
+  .project-row.reverse {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* Imagem vem antes do texto no mobile (mais bonito) */
+  .project-image {
+    order: 0;
+  }
+  .project-text {
+    order: 1;
+  }
+
+  /* Imagem ocupa 100% no celular */
+  .project-image img {
+    width: 100%;
+    border-radius: 14px; /* se você já usa radius, pode remover */
+  }
+
+  /* Tags quebrando certinho */
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* ===== CONTATO ===== */
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+}
+/* =========================
+   HOME (HERO) RESPONSIVO
+   Cole no FINAL do style.css
+========================= */
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 32px 24px; /* reduz padding */
+    gap: 32px;
+    height: auto; /* não trava em 100vh */
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    max-width: 100%; /* libera o texto */
+  }
+
+  .hero-image img {
+    width: min(420px, 85vw);
+    height: auto; /* remove altura fixa */
+  }
+
+  .hero-buttons {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column-reverse; /* foto em cima e texto abaixo (fica lindo) */
+    padding: 22px 14px;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+    line-height: 1.05;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero-image img {
+    width: min(320px, 80vw);
+    height: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 28px 24px;
+    height: auto;
+    min-height: 100vh;
+    gap: 28px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-image img {
+    width: min(420px, 85vw);
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 22px 14px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-image img {
+    width: min(320px, 85vw);
+    height: auto;
+  }
+}
